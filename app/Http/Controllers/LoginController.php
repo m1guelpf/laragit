@@ -36,9 +36,11 @@ class LoginController extends Controller
 
         return Redirect::intended();
     }
+
     public function logoutUser()
     {
-      Auth::logout();
-      return redirect('');
+        Auth::logout();
+
+        return redirect('');
     }
 }
