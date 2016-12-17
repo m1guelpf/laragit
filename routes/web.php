@@ -19,3 +19,4 @@ Route::get('login', 'LoginController@authorizeUser');
 
 // Facebook redirects here after authorization
 Route::get('callback', 'LoginController@loginUser');
+Route::get('logout', 'LoginController@logoutUser');
