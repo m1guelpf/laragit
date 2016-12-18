@@ -18,21 +18,21 @@ return [
     ],
 
     'view' => [
-        'senderName'  => "Miguel Piedrafita",
+        'senderName'  => 'Miguel Piedrafita',
         'reminder'    => null,
         'unsubscribe' => 'Unsubscribe from this mails',
         'address'     => null,
 
         'logo'        => [
-            'path'   => "http://github.local.dev/img/logo.png",
+            'path'   => 'http://github.local.dev/img/logo.png',
             'width'  => '50',
             'height' => '50',
         ],
 
-        'twitter'  => "m1guelpf",
-        'facebook' => "m1guelpiedrafita",
+        'twitter'  => 'm1guelpf',
+        'facebook' => 'm1guelpiedrafita',
         'flickr'   => null,
-        'github'   => "m1guelpf",
+        'github'   => 'm1guelpf',
     ],
 
 ];
