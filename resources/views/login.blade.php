@@ -7,6 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Login</div>
                 <div class="panel-body">
+                  <p>Please login with your Github account to continue:
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
                         {{ csrf_field() }}
                               <button type="submit" class="btn btn-block btn-social btn-github">
