@@ -1,5 +1,4 @@
-<?php
-/*<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -69,16 +68,15 @@
         <div class="flex-center position-ref full-height">
                 <div class="top-right links">
                     @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/dashboard') }}">Dashboard</a>
                     @else
                         <a href="{{ url('/login') }}">Login</a>
                     @endif
                 </div>
-*/ ?>
-@layout('layouts.app')
+
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    {{ config('app.name', 'Laravel') }}
                 </div>
 
                 <div class="links">

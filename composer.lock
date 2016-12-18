@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1d01519540c95a5c12ad0a79c8e62e3f",
-    "content-hash": "3154c90784a8596585b08230b8a1ddf3",
+    "hash": "d6169ccb12b6f2784a47cb5f8027760a",
+    "content-hash": "df510ce6b9c103f01140814c8913036f",
     "packages": [
         {
             "name": "adamwathan/eloquent-oauth",
@@ -1054,6 +1054,66 @@
             "time": "2016-11-07 23:38:38"
         },
         {
+            "name": "pelago/emogrifier",
+            "version": "V1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jjriv/emogrifier.git",
+                "reference": "dd9442740e044a11968bf6a5d94460a5426a2419"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jjriv/emogrifier/zipball/dd9442740e044a11968bf6a5d94460a5426a2419",
+                "reference": "dd9442740e044a11968bf6a5d94460a5426a2419",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0,<=7.1.99"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.8.27",
+                "squizlabs/php_codesniffer": "2.6.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Pelago\\": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "John Reeve",
+                    "email": "jreeve@pelagodesign.com"
+                },
+                {
+                    "name": "Cameron Brooks"
+                },
+                {
+                    "name": "Jaime Prado"
+                },
+                {
+                    "name": "Oliver Klee",
+                    "email": "typo3-coding@oliverklee.de"
+                },
+                {
+                    "name": "Roman Ožana",
+                    "email": "ozana@omdesign.cz"
+                }
+            ],
+            "description": "Converts CSS styles into inline style attributes in your HTML code",
+            "homepage": "http://www.pelagodesign.com/sidecar/emogrifier/",
+            "time": "2016-09-20 15:15:23"
+        },
+        {
             "name": "psr/http-message",
             "version": "1.0.1",
             "source": {
@@ -1304,6 +1364,49 @@
                 "uuid"
             ],
             "time": "2016-11-22 19:21:44"
+        },
+        {
+            "name": "snowfire/beautymail",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Snowfire/Beautymail.git",
+                "reference": "fc21615cbf78c24a3d08a8d2fb88896433be5434"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Snowfire/Beautymail/zipball/fc21615cbf78c24a3d08a8d2fb88896433be5434",
+                "reference": "fc21615cbf78c24a3d08a8d2fb88896433be5434",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "4.*|5.*",
+                "pelago/emogrifier": "@dev",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Snowfire\\Beautymail\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Emil Sundberg",
+                    "email": "emil@snowfire.net"
+                }
+            ],
+            "description": "Send beautiful html emails with Laravel",
+            "keywords": [
+                "email",
+                "html",
+                "laravel"
+            ],
+            "time": "2016-09-22 07:25:58"
         },
         {
             "name": "socialnorm/facebook",
@@ -4061,7 +4164,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "snowfire/beautymail": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

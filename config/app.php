@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => 'Laravel',
+    'name' => env('APP_NAME', 'LaraGit'),
 
     /*
     |--------------------------------------------------------------------------
@@ -168,6 +168,7 @@ return [
          */
 
         AdamWathan\EloquentOAuthL5\EloquentOAuthServiceProvider::class,
+        Snowfire\Beautymail\BeautymailServiceProvider::class,
 
         /*
          * Application Service Providers...
