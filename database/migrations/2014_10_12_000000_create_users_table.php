@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('token');
             $table->boolean('recieveMails')->default(true);
+            $table->rememberToken();
             $table->timestamps();
         });
     }

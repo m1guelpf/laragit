@@ -12,7 +12,8 @@
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
-
+    <link href="/css/bootstrap-social.css" rel="stylesheet">
+    <script src="https://use.fontawesome.com/fc6a65c83a.js"></script>
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([
