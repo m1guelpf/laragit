@@ -7,8 +7,8 @@ return [
     'table'     => 'oauth_identities',
     'providers' => [
       'github' => [
-          'client_id'     => '3661674a3b8566c1e51b',
-          'client_secret' => 'f422ba9c553f3a93950f17937d10b0f8ac9d7faf',
+          'client_id'     => env('GITHUB_ID'),
+          'client_secret' => env('GITHUB_SECRET'),
           'redirect_uri'  => 'http://github.local.dev/callback',
           'scope'         => ['notifications'],
       ],

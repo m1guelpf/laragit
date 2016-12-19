@@ -170,6 +170,7 @@ return [
         AdamWathan\EloquentOAuthL5\EloquentOAuthServiceProvider::class,
         Snowfire\Beautymail\BeautymailServiceProvider::class,
         GrahamCampbell\GitHub\GitHubServiceProvider::class,
+        Sentry\SentryLaravel\SentryLaravelServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -229,6 +230,7 @@ return [
         'View'         => Illuminate\Support\Facades\View::class,
         'SocialAuth'   => AdamWathan\EloquentOAuth\Facades\OAuth::class,
         'GitHub'       => GrahamCampbell\GitHub\Facades\GitHub::class,
+        'Sentry' => Sentry\SentryLaravel\SentryFacade::class,
     ],
 
 ];
