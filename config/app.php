@@ -230,7 +230,7 @@ return [
         'View'         => Illuminate\Support\Facades\View::class,
         'SocialAuth'   => AdamWathan\EloquentOAuth\Facades\OAuth::class,
         'GitHub'       => GrahamCampbell\GitHub\Facades\GitHub::class,
-        'Sentry' => Sentry\SentryLaravel\SentryFacade::class,
+        'Sentry'       => Sentry\SentryLaravel\SentryFacade::class,
     ],
 
 ];
