@@ -30,3 +30,4 @@ Route::get('mail/unsubscribed', 'MailController@showUnsubscribed');
 Route::get('wip', function () {
     echo 'This part of the site is not working yet, check back soon!';
 });
+Route::get('orgs', 'GithubController@getOrgs');
