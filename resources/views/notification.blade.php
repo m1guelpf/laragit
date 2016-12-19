@@ -9,6 +9,10 @@
 
                 <div class="panel-body">
                     {{ json_encode($notification) }}
+                    <br><br><br><br>
+                    ID: {{ $notification['id'] }}
+                    <br>
+                    Title: {{ ($notification['subject'])['title'] }}
                 </div>
             </div>
         </div>
