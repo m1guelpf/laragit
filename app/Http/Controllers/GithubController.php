@@ -24,7 +24,8 @@ class GithubController extends Controller
     {
         Github::authenticate(Auth::user()->token, null, 'http_token');
         $notification = GitHub::api('notification')->id($id);
-        $html_url = Github::api('issue')->all('KnpLabs', 'php-github-api', array('state' => 'open'));
+        $html_url = Github::api('issue')->all('KnpLabs', 'php-github-api', ['state' => 'open']);
+
         return view('notification')->with('notification', $notification);
     }
 }
