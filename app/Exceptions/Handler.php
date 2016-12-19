@@ -23,32 +23,32 @@ class Handler extends ExceptionHandler
         \Illuminate\Validation\ValidationException::class,
     ];
 
-    /**
-     * Report or log an exception.
-     *
-     * This is a great spot to send exceptions to Sentry, Bugsnag, etc.
-     *
-     * @param \Exception $exception
-     *
-     * @return void
-     */
+     /**
+      * Report or log an exception.
+      *
+      * This is a great spot to send exceptions to Sentry, Bugsnag, etc.
+      *
+      * @param \Exception $exception
+      *
+      * @return void
+      */
      public function report(Exception $e)
-    {
-        if ($this->shouldReport($e)) {
-            // bind the event ID for Feedback
+     {
+         if ($this->shouldReport($e)) {
+             // bind the event ID for Feedback
             $this->sentryID = app('sentry')->captureException($e);
-        }
-        parent::report($e);
-    }
+         }
+         parent::report($e);
+     }
 
-    /**
-     * Render an exception into an HTTP response.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param \Exception               $exception
-     *
-     * @return \Illuminate\Http\Response
-     */
+     /**
+      * Render an exception into an HTTP response.
+      *
+      * @param \Illuminate\Http\Request $request
+      * @param \Exception               $exception
+      *
+      * @return \Illuminate\Http\Response
+      */
      public function render($request, Exception $e)
      {
          return response()->view('errors.500', [
@@ -72,5 +72,4 @@ class Handler extends ExceptionHandler
 
         return redirect()->guest('login');
     }
-
 }
