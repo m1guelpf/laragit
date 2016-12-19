@@ -11,9 +11,11 @@ use SocialNorm\Exceptions\InvalidAuthorizationCodeException;
 
 class LoginController extends Controller
 {
-    public function showLogin(){
-      return view('login');
+    public function showLogin()
+    {
+        return view('login');
     }
+
     public function authorizeUser()
     {
         return SocialAuth::authorize('github');

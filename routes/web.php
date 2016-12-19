@@ -1,6 +1,6 @@
 <?php
+
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
-use Monolog\Handler\Curl\Util;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +27,6 @@ Route::get('mail/unsubscribe', 'MailController@showUnsubscribe');
 Route::post('mail/unsubscribe', 'MailController@unsubscribe');
 Route::get('mail/unsubscribed', 'MailController@showUnsubscribed');
 // Other
-Route::get('wip', function(){
-  echo "This part of the site is not working yet, check back soon!";
+Route::get('wip', function () {
+    echo 'This part of the site is not working yet, check back soon!';
 });
