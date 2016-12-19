@@ -3,20 +3,27 @@
 namespace App\Http\Controllers;
 
 use Auth;
-use Github;
+use App;
+use GrahamCampbell\GitHub\Facades\GitHub;
 
 class GithubController extends Controller
 {
-    public $github;
 
     public function __construct()
     {
         $this->middleware('auth');
-        $github = app('github.factory')->make(['token' => Auth::user()->token, 'method' => 'token']);
     }
 
-    public function getOrgs()
+    public function getNotifications()
     {
-        return $github->me()->organizations();
+      Github::authenticate(Auth::user()->token, null, 'http_token');
+      $notifications = GitHub::api('notification')->all();
+      return view('notifications')->with('notifications', $notifications);
+    }
+    public function getNotification($id)
+    {
+      Github::authenticate(Auth::user()->token, null, 'http_token');
+      $notification = GitHub::api('notification')->id($id);
+      return view('notification')->with('notification', $notification);
     }
 }
