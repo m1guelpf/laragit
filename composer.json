@@ -11,7 +11,7 @@
         "snowfire/beautymail": "dev-master",
         "php-http/guzzle6-adapter": "^1.1",
         "graham-campbell/github": "^5.0",
-        "sentry/sentry-laravel": "^0.5.0"
+        "rachidlaasri/laravel-installer": "^1.5"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
