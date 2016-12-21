@@ -8,13 +8,15 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    ID: {{ $notification['id'] }}
+                  {{ json_encode($pullRequest) }}
+                  <br><br><br><br><br><br>
+                    ID: {{ $pullRequest['id'] }}
                     <br>
-                    Title: {{ ($notification['subject'])['title'] }}
+                    State: {{ $pullRequest['state'] }}
                     <br>
-                    URL: {{ ($notification['subject'])['url'] }}
+                    URL: {{ $pullRequest['html_url'] }}
                     <br>
-                    Type: {{ ($notification['subject'])['type'] }}
+                    Title: {{ $pullRequest['title'] }}
                 </div>
             </div>
         </div>

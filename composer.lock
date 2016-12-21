@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "36751c1f6e6ddb2b3707ead6a174dbed",
-    "content-hash": "26df72e83e9bb14824034c53c703ebf6",
+    "hash": "d4e5a99b5b3170892d1c6e203de1bbf4",
+    "content-hash": "e86795bec1a062932c4547ba03d39003",
     "packages": [
         {
             "name": "adamwathan/eloquent-oauth",
@@ -752,16 +752,16 @@
         },
         {
             "name": "knplabs/github-api",
-            "version": "2.0.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/php-github-api.git",
-                "reference": "a86aa7afb3bcb06703ecf9e917df61ad341cd991"
+                "reference": "39118bd808e037f7e4b6188f39b969bc1df7f410"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/php-github-api/zipball/a86aa7afb3bcb06703ecf9e917df61ad341cd991",
-                "reference": "a86aa7afb3bcb06703ecf9e917df61ad341cd991",
+                "url": "https://api.github.com/repos/KnpLabs/php-github-api/zipball/39118bd808e037f7e4b6188f39b969bc1df7f410",
+                "reference": "39118bd808e037f7e4b6188f39b969bc1df7f410",
                 "shasum": ""
             },
             "require": {
@@ -814,7 +814,7 @@
                 "gist",
                 "github"
             ],
-            "time": "2016-12-13 13:09:53"
+            "time": "2016-12-21 12:25:46"
         },
         {
             "name": "laravel/framework",
@@ -5007,7 +5007,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "snowfire/beautymail": 20
+        "snowfire/beautymail": 20,
+        "knplabs/github-api": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

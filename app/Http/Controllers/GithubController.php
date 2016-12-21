@@ -24,15 +24,34 @@ class GithubController extends Controller
     {
         Github::authenticate(Auth::user()->token, null, 'http_token');
         $notification = GitHub::api('notification')->id($id);
-        $html_url = Github::api('issue')->show(($notification['owner'])['login'], ($notification['subject'])['name'], 1);
-
-        return view('notification')->with('notification', $notification);
+        $type = ($notification['subject'])['type'];
+        $url = ($notification['subject'])['url'];
+        $processed_url = explode('/', $url);
+        $user = $processed_url[4];
+        $repo = $processed_url[5];
+        $id = $processed_url[7];
+        if ($type == "PullRequest"){
+          $pullRequest = $this->getPR($user, $repo, $id);
+          return view('pullRequest')->with('pullRequest', $pullRequest);
+        } else if ($type == "Issue"){
+          $issue = $this->getIssue($user, $repo, $id);
+          return view('issue')->with('issue', $issue);
+        } else{
+          return redirect('wip');
+        }
     }
-
-    public function getURL($apiURL)
+    public function getIssue($user, $repo, $id)
     {
-        $client = new Github\Client();
-        $response = Github::getHttpClient()->get('repos/KnpLabs/php-github-api');
-        $repo = Github\HttpClient\Message\ResponseMediator::getContent($response);
+        Github::authenticate(Auth::user()->token, null, 'http_token');
+        $issue = Github::api('issue')->show($user, $repo, $id);
+        return $issue;
     }
+
+    public function getPR($user, $repo, $id)
+    {
+        Github::authenticate(Auth::user()->token, null, 'http_token');
+        $pullRequest = Github::api('pull_request')->show($user, $repo, $id);
+        return $pullRequest;
+    }
+
 }
