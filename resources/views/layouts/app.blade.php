@@ -12,7 +12,10 @@
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/bootstrap-responsive.min.css" rel="stylesheet">
     <link href="/css/bootstrap-social.css" rel="stylesheet">
+    <link href="/css/primer.css" rel="stylesheet">
     <script src="https://use.fontawesome.com/fc6a65c83a.js"></script>
     <!-- Scripts -->
     <script>
