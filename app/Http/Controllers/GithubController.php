@@ -32,19 +32,24 @@ class GithubController extends Controller
         $id = $processed_url[7];
         if ($type == 'PullRequest') {
             $pullRequest = $this->getPR($user, $repo, $id);
+
             return view('pullRequest')->with('pullRequest', $pullRequest);
         } elseif ($type == 'Issue') {
             $issue = $this->getIssue($user, $repo, $id);
+
             return view('issue')->with('issue', $issue);
-        } elseif ($type == 'Commit'){
-          $commit = $this->getCommit($user, $repo, $id);
-          return view('commit')->with('commit', $commit);
-        } else if ($type == 'Release'){
-          $release = $this->getRelease($user, $repo, $id);
-          return view('release')->with('release', $release);
-        } else if ($type == 'RepositoryInvitation'){
-          $RepositoryInvitation = $this->getRepositoryInvitation($user, $repo, $id);
-          return view('RepositoryInvitation')->with('RepositoryInvitation', $RepositoryInvitation);
+        } elseif ($type == 'Commit') {
+            $commit = $this->getCommit($user, $repo, $id);
+
+            return view('commit')->with('commit', $commit);
+        } elseif ($type == 'Release') {
+            $release = $this->getRelease($user, $repo, $id);
+
+            return view('release')->with('release', $release);
+        } elseif ($type == 'RepositoryInvitation') {
+            $RepositoryInvitation = $this->getRepositoryInvitation($user, $repo, $id);
+
+            return view('RepositoryInvitation')->with('RepositoryInvitation', $RepositoryInvitation);
         } else {
             return redirect('wip');
         }
