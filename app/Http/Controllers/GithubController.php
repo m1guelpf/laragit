@@ -20,30 +20,31 @@ class GithubController extends Controller
         return view('notifications')->with('notifications', $notifications);
     }
 
-    public function getNotification($name)
+    public function getNotification($id)
     {
         Github::authenticate(Auth::user()->token, null, 'http_token');
-        $notification = GitHub::api('notification')->id($name);
+        $notification = GitHub::api('notification')->id($id);
         $type = ($notification['subject'])['type'];
         $url = ($notification['subject'])['url'];
         $processed_url = explode('/', $url);
         $user = $processed_url[4];
         $repo = $processed_url[5];
-        $name = $processed_url[7];
+        $id = $processed_url[7];
         if ($type == 'PullRequest') {
-            $pullRequest = $this->getPR($user, $repo, $name);
+            $pullRequest = $this->getPR($user, $repo, $id);
 
             return view('pullRequest')->with('pullRequest', $pullRequest);
         } elseif ($type == 'Issue') {
-            $issue = $this->getIssue($user, $repo, $name);
-
-            return view('issue')->with('issue', $issue);
+            $vars = $this->getIssue($user, $repo, $id);
+            $issue = $vars[1];
+            $comments = $vars[2];
+            return view('issue', ['issue' => $issue, 'comments' => $comments]);
         } elseif ($type == 'Commit') {
-            $commit = $this->getCommit($user, $repo, $name);
+            $commit = $this->getCommit($user, $repo, $id);
 
             return view('commit')->with('commit', $commit);
         } elseif ($type == 'Release') {
-            $release = $this->getRelease($user, $repo, $name);
+            $release = $this->getRelease($user, $repo, $id);
 
             return view('release')->with('release', $release);
         } else {
@@ -51,34 +52,34 @@ class GithubController extends Controller
         }
     }
 
-    public function getIssue($user, $repo, $name)
+    public function getIssue($user, $repo, $id)
     {
         Github::authenticate(Auth::user()->token, null, 'http_token');
-        $issue = Github::api('issue')->show($user, $repo, $name);
-
-        return $issue;
+        $issue = Github::api('issue')->show($user, $repo, $id);
+        $comments = Github::api('issue')->comments()->all($user, $repo, $id);
+        return array($issue, $comments);
     }
 
-    public function getPR($user, $repo, $name)
+    public function getPR($user, $repo, $id)
     {
         Github::authenticate(Auth::user()->token, null, 'http_token');
-        $pullRequest = Github::api('pull_request')->show($user, $repo, $name);
+        $pullRequest = Github::api('pull_request')->show($user, $repo, $id);
 
         return $pullRequest;
     }
 
-    public function getCommit($user, $repo, $name)
+    public function getCommit($user, $repo, $id)
     {
         Github::authenticate(Auth::user()->token, null, 'http_token');
-        $commit = Github::api('repo')->commits()->show($user, $repo, $name);
+        $commit = Github::api('repo')->commits()->show($user, $repo, $id);
 
         return $commit;
     }
 
-    public function getRelease($user, $repo, $name)
+    public function getRelease($user, $repo, $id)
     {
         Github::authenticate(Auth::user()->token, null, 'http_token');
-        $release = Github::api('repo')->releases()->show($user, $repo, $name);
+        $release = Github::api('repo')->releases()->show($user, $repo, $id);
 
         return $release;
     }

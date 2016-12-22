@@ -14,11 +14,17 @@
                 <span class="state state-open">Open</span>
                     <a href="{{ ($issue['user'])['html_url'] }}" target="_blank"><span class="tooltipped tooltipped-s border p-2 mb-2 mr-2 left" aria-label="{{ ($issue['user'])['login'] }}"><img src="{{ ($issue['user'])['avatar_url'] }}" alt="{{ ($issue['user'])['login'] }}" style="width:50px; heigth:50px; border-radius:50%"></span></a>
                     <br>
-                    Body: {!! $issue['body'] !!}
+                    <div class="container-fluid">
+                      <div class="row">
+                        <div class="col-md-5 col-md">
+                    {!! $issue['body'] !!}
                     <br>
                     URL: {{ $issue['html_url'] }}
                     <br>
                     State: {{ $issue['state'] }}
+                  </div>
+                  </div>
+                  </div>
                 </div>
             </div>
         </div>
