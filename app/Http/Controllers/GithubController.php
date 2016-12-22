@@ -32,12 +32,19 @@ class GithubController extends Controller
         $id = $processed_url[7];
         if ($type == 'PullRequest') {
             $pullRequest = $this->getPR($user, $repo, $id);
-
             return view('pullRequest')->with('pullRequest', $pullRequest);
         } elseif ($type == 'Issue') {
             $issue = $this->getIssue($user, $repo, $id);
-
             return view('issue')->with('issue', $issue);
+        } elseif ($type == 'Commit'){
+          $commit = $this->getCommit($user, $repo, $id);
+          return view('commit')->with('commit', $commit);
+        } else if ($type == 'Release'){
+          $release = $this->getRelease($user, $repo, $id);
+          return view('release')->with('release', $release);
+        } else if ($type == 'RepositoryInvitation'){
+          $RepositoryInvitation = $this->getRepositoryInvitation($user, $repo, $id);
+          return view('RepositoryInvitation')->with('RepositoryInvitation', $RepositoryInvitation);
         } else {
             return redirect('wip');
         }
@@ -57,5 +64,29 @@ class GithubController extends Controller
         $pullRequest = Github::api('pull_request')->show($user, $repo, $id);
 
         return $pullRequest;
+    }
+
+    public function getCommit($user, $repo, $id)
+    {
+        Github::authenticate(Auth::user()->token, null, 'http_token');
+        $commit = Github::api('pull_request')->show($user, $repo, $id);
+
+        return $commit;
+    }
+
+    public function getRelease($user, $repo, $id)
+    {
+        Github::authenticate(Auth::user()->token, null, 'http_token');
+        $release = Github::api('pull_request')->show($user, $repo, $id);
+
+        return $release;
+    }
+
+    public function getRepositoryInvitation($user, $repo, $id)
+    {
+        Github::authenticate(Auth::user()->token, null, 'http_token');
+        $RepositoryInvitation = Github::api('pull_request')->show($user, $repo, $id);
+
+        return $RepositoryInvitation;
     }
 }
