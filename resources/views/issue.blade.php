@@ -11,11 +11,8 @@
                   {{ json_encode($issue) }}
                   <br><br><br><br><br><br><br>
                   <h3 style="text-align:center">{{ $issue['title'] }}</h3>
-                <button class="btn btn-primary" type="button">Primary button</button>
-                    <a href="{{ ($issue['user'])['html_url'] }}" target="_blank"><img src="{{ ($issue['user'])['avatar_url'] }}" alt="{{ ($issue['user'])['login'] }}" title="{{ ($issue['user'])['login'] }}"style="width:50px; heigth:50px; border-radius:50%"></a>
-                    ID: {{ $issue['id'] }}
-                    <br>
-                    Title: {{ $issue['title'] }}
+                <span class="state state-open">Open</span>
+                    <a href="{{ ($issue['user'])['html_url'] }}" target="_blank"><span class="tooltipped tooltipped-s border p-2 mb-2 mr-2 left" aria-label="{{ ($issue['user'])['login'] }}"><img src="{{ ($issue['user'])['avatar_url'] }}" alt="{{ ($issue['user'])['login'] }}" style="width:50px; heigth:50px; border-radius:50%"></span></a>
                     <br>
                     Body: {!! $issue['body'] !!}
                     <br>

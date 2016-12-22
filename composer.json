@@ -12,7 +12,8 @@
         "php-http/guzzle6-adapter": "^1.1",
         "graham-campbell/github": "^5.0",
         "rachidlaasri/laravel-installer": "^1.5",
-        "knplabs/github-api": "dev-master"
+        "knplabs/github-api": "dev-master",
+        "madewithlove/illuminate-psr-cache-bridge": "^1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
