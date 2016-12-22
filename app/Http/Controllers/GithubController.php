@@ -38,6 +38,7 @@ class GithubController extends Controller
             $vars = $this->getIssue($user, $repo, $id);
             $issue = $vars[1];
             $comments = $vars[2];
+
             return view('issue', ['issue' => $issue, 'comments' => $comments]);
         } elseif ($type == 'Commit') {
             $commit = $this->getCommit($user, $repo, $id);
@@ -57,7 +58,8 @@ class GithubController extends Controller
         Github::authenticate(Auth::user()->token, null, 'http_token');
         $issue = Github::api('issue')->show($user, $repo, $id);
         $comments = Github::api('issue')->comments()->all($user, $repo, $id);
-        return array($issue, $comments);
+
+        return [$issue, $comments];
     }
 
     public function getPR($user, $repo, $id)
