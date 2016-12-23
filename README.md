@@ -32,6 +32,21 @@ LaraGit was created as a personal project for learning Laravel, PHP and the Gith
 4. [Create a Github OAuth app](https://github.com/settings/applications/new) using ```[YOUR_URL]/callback``` as the **Authorization callback URL** and add them to ```config/eloquent-oauth.php```. As this is complex, you can use ours instead.
 5. Enjoy!
 
+## Status:
+
+Actual version: ```v0.5-beta```
+The first stable version (```v1.0```) will be released soon! ~~It needs some final edits before release.~~ If you want to help or see how it's going, ```v1.0``` needs:
+
+- [x] Login with Github
+- [x] Save user's github token
+- [x] Retrieve notifications
+- [x] Show notifications
+- [x] Mark notifications as read
+- [x] Use Github CSS (Primer CSS)
+- [x] Use Octicons
+
+Edit: **All done! Expect a release soon!**
+
 ## Improvements:
 
 - [ ] Reduce page speed
