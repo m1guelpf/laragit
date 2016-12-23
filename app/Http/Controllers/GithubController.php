@@ -32,15 +32,19 @@ class GithubController extends Controller
         $id = $processed_url[7];
         if ($type == 'PullRequest') {
             $pullRequest = $this->getPR($user, $repo, $id);
+
             return redirect($pullRequest['html_url']);
         } elseif ($type == 'Issue') {
             $issue = $this->getIssue($user, $repo, $id);
+
             return redirect($issue['html_url']);
         } elseif ($type == 'Commit') {
             $commit = $this->getCommit($user, $repo, $id);
+
             return redirect($commit['html_url']);
         } elseif ($type == 'Release') {
             $release = $this->getRelease($user, $repo, $id);
+
             return redirect($release['html_url']);
         } else {
             return redirect('wip');
@@ -51,6 +55,7 @@ class GithubController extends Controller
     {
         Github::authenticate(Auth::user()->token, null, 'http_token');
         $issue = Github::api('issue')->show($user, $repo, $id);
+
         return $issue;
     }
 
@@ -58,6 +63,7 @@ class GithubController extends Controller
     {
         Github::authenticate(Auth::user()->token, null, 'http_token');
         $pullRequest = Github::api('pull_request')->show($user, $repo, $id);
+
         return $pullRequest;
     }
 
@@ -65,6 +71,7 @@ class GithubController extends Controller
     {
         Github::authenticate(Auth::user()->token, null, 'http_token');
         $commit = Github::api('repo')->commits()->show($user, $repo, $id);
+
         return $commit;
     }
 
@@ -72,6 +79,7 @@ class GithubController extends Controller
     {
         Github::authenticate(Auth::user()->token, null, 'http_token');
         $release = Github::api('repo')->releases()->show($user, $repo, $id);
+
         return $release;
     }
 }
