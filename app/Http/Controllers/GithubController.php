@@ -16,7 +16,6 @@ class GithubController extends Controller
     {
         Github::authenticate(Auth::user()->token, null, 'http_token');
         $notifications = GitHub::api('notification')->all();
-
         return view('notifications')->with('notifications', $notifications);
     }
 
