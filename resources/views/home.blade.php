@@ -11,6 +11,7 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
+        <link href="/css/custom.css" rel="stylesheet">
         <style>
             html, body {
                 background-color: #fff;
@@ -81,6 +82,9 @@
 
                 <div class="links">
                     <a href="https://github.com/m1guelpf/github">GitHub</a>
+                </div>
+                <div class="using-github">
+                  Using <span class="octicon octicon-logo-github"></span>
                 </div>
             </div>
         </div>
