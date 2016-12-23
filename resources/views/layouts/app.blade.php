@@ -17,6 +17,7 @@
     <link href="/css/bootstrap-social.css" rel="stylesheet">
     <link href="/css/states.css" rel="stylesheet">
     <link href="/css/tooltips.css" rel="stylesheet">
+    <link href="/css/avatars.css" rel="stylesheet">
     <script src="https://use.fontawesome.com/fc6a65c83a.js"></script>
     <!-- Scripts -->
     <script>
