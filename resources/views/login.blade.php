@@ -11,7 +11,7 @@
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
                         {{ csrf_field() }}
                               <button type="submit" class="btn btn-block btn-social btn-github">
-                                <span class="fa fa-github"></span> Sign in with Github</a>
+                                <span class="octicon octicon-mark-github"></span> Sign in with Github</a>
                             </div>
                         </div>
                     </form>

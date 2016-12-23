@@ -1,6 +1,11 @@
 .using-github{
-     position:absolute;
-     bottom:0;
-     right:0;
-     color: black;
+    position:fixed;
+    bottom:0px;
+    right:0px;
+}
+.notification{
+  margin:25px;
+}
+.markread{
+  right:10px;
 }

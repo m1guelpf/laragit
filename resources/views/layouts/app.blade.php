@@ -19,7 +19,6 @@
     <link href="/css/states.css" rel="stylesheet">
     <link href="/css/tooltips.css" rel="stylesheet">
     <link href="/css/avatars.css" rel="stylesheet">
-    <script src="https://use.fontawesome.com/fc6a65c83a.js"></script>
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([
@@ -86,8 +85,11 @@
 
         @yield('content')
     </div>
-
+    <div class="using-github">
+      Using <span class="octicon octicon-logo-github"></span>
+    </div>
     <!-- Scripts -->
     <script src="/js/app.js"></script>
+    <script src="/js/custom.js"></script>
 </body>
 </html>
