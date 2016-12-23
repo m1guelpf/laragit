@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Auth;
 use GrahamCampbell\GitHub\Facades\GitHub;
-use Log;
 
 class GithubController extends Controller
 {
@@ -17,9 +16,10 @@ class GithubController extends Controller
     {
         Github::authenticate(Auth::user()->token, null, 'http_token');
         $notifications = GitHub::api('notification')->all();
-        if ($notifications != null){
-        return view('notifications')->with('notifications', $notifications);
-      }
+        if ($notifications != null) {
+            return view('notifications')->with('notifications', $notifications);
+        }
+
         return view('no-notifications');
     }
 
@@ -86,8 +86,9 @@ class GithubController extends Controller
         return $release;
     }
 
-    public static function markAllRead(){
-      Github::authenticate(Auth::user()->token, null, 'http_token');
+    public static function markAllRead()
+    {
+        Github::authenticate(Auth::user()->token, null, 'http_token');
         Github::api('notification')->markRead();
     }
 }
