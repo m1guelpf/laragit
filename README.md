@@ -11,3 +11,31 @@ LaraGit was created as a personal project for learning Laravel, PHP and the Gith
 - Uses Github Style: LaraGit uses [PrimeCSS](http://primercss.io/) and [Octicons](https://octicons.github.com) for having a github-like style!
 - Caching: LaraGit uses notification caching to reduce load time and provide you an awesome experience!
 - More coming soon: LaraGit is under active developement so, if you want to help or have ideas, go ahead and Contribute!
+
+## Requirements:
+
+- PHP >= 5.6.4
+- Composer
+- MySQL
+- MySQL PHP Extension
+- OpenSSL PHP Extension
+- PDO PHP Extension
+- Mbstring PHP Extension
+- Tokenizer PHP Extension
+- XML PHP Extension
+
+## Installation:
+
+1. Clone or download this repo to somewhere on your server.
+2. Rename .env.example to .env and fill the database settings.
+3. Run ```composer install```, ```php artisan key:generate``` and ```php artisan migrate```.
+4. [Create a Github OAuth app](https://github.com/settings/applications/new) using ```[YOUR_URL]/callback``` as the **Authorization callback URL** and add them to ```config/eloquent-oauth.php```. As this is complex, you can use ours instead.
+5. Enjoy!
+
+## Credits:
+
+- [PHP](https://php.net) - For his awesome work on developing PHP.
+- [MySQL](https://mysql.com) - For that awesome DB software.
+- [Laravel](https://laravel.com) - For this awesome framework.
+- [KNP Labs](https://knplabs.com) - For his awesome [php-github-api](https://github.com/KnpLabs/php-github-api).
+- [Graham Campbell](https://gjcampbell.co.uk/) - For his awesome [Laravel Github](https://github.com/GrahamCampbell/Laravel-GitHub).
