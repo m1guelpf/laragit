@@ -32,6 +32,16 @@ LaraGit was created as a personal project for learning Laravel, PHP and the Gith
 4. [Create a Github OAuth app](https://github.com/settings/applications/new) using ```[YOUR_URL]/callback``` as the **Authorization callback URL** and add them to ```config/eloquent-oauth.php```. As this is complex, you can use ours instead.
 5. Enjoy!
 
+## Improvements:
+
+- [ ] Reduce page speed
+- [ ] Make tests (I don't know how *yet*)
+- [ ] Improve the UI (I'm horrible at design)
+- [ ] Make the code cleaner
+- [ ] Provide an installer
+
+Any other thing **you** think that can be improved.
+
 ## Credits:
 
 - [PHP](https://php.net) - For his awesome work on developing PHP.
@@ -40,3 +50,4 @@ LaraGit was created as a personal project for learning Laravel, PHP and the Gith
 - [Github](https://github.com) - For his [API](https://developers.github.com/v3) and the awesome people at [Github Support](https://github.com/contact).
 - [KNP Labs](https://knplabs.com) - For his awesome [php-github-api](https://github.com/KnpLabs/php-github-api).
 - [Graham Campbell](https://gjcampbell.co.uk/) - For his awesome [Laravel Github](https://github.com/GrahamCampbell/Laravel-GitHub).
+- [Andrew Nesbitt](http://nesbitt.io/) - For all the inspiration I took with [octobox](https://github.com/octobox/octobox).
