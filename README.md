@@ -36,7 +36,7 @@ LaraGit was created as a personal project for learning Laravel, PHP and the Gith
 
 - [ ] Reduce page speed
 - [ ] Make tests (I don't know how *yet*)
-- [ ] Improve the UI (I'm horrible at design)
+- [ ] Improve the UI (I'm horrible at bootstrap design)
 - [ ] Make the code cleaner
 - [ ] Provide an installer
 
