@@ -1,11 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
+<script type="text/javascript" language="javascript">
+function markAllRead(){
+}
+</script>
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Notifications<div style="text-align:right"><span class="octicon octicon-check"></span></div></div>
+                <div class="panel-heading">Notifications<span style="float:right" onclick="window.location='{{ url('notifications/read') }}'" class="octicon octicon-check"></span></div>
 
                 <div class="panel-body">
                   <table>

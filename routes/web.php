@@ -32,3 +32,4 @@ Route::get('wip', function () {
 });
 Route::get('notifications', 'GithubController@getNotifications');
 Route::get('notification/{id}', 'GithubController@getNotification');
+Route::get('notifications/read', 'GithubController@markAllRead');
