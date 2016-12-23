@@ -37,5 +37,6 @@ LaraGit was created as a personal project for learning Laravel, PHP and the Gith
 - [PHP](https://php.net) - For his awesome work on developing PHP.
 - [MySQL](https://mysql.com) - For that awesome DB software.
 - [Laravel](https://laravel.com) - For this awesome framework.
+- [Github](https://github.com) - For his [API](https://developers.github.com/v3) and the awesome people at [Github Support](https://github.com/contact).
 - [KNP Labs](https://knplabs.com) - For his awesome [php-github-api](https://github.com/KnpLabs/php-github-api).
 - [Graham Campbell](https://gjcampbell.co.uk/) - For his awesome [Laravel Github](https://github.com/GrahamCampbell/Laravel-GitHub).
