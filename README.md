@@ -34,18 +34,8 @@ LaraGit was created as a personal project for learning Laravel, PHP and the Gith
 
 ## Status:
 
-Actual version: ```v0.5-beta```
-The first stable version (```v1.0```) will be released soon! ~~It needs some final edits before release.~~ If you want to help or see how it's going, ```v1.0``` needs:
-
-- [x] Login with Github
-- [x] Save user's github token
-- [x] Retrieve notifications
-- [x] Show notifications
-- [x] Mark notifications as read
-- [x] Use Github CSS (Primer CSS)
-- [x] Use Octicons
-
-Edit: **All done! Expect a release soon!**
+Actual version: [```v1.0```](https://github.com/m1guelpf/laragit/releases/v1.0)
+Our first stable release is live!
 
 ## Improvements:
 
