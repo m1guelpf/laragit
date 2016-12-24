@@ -38,11 +38,12 @@ Actual version: [```v1.0```](https://github.com/m1guelpf/laragit/releases/v1.0)
 Our first stable release is live! You can download the latest version from [here](https://github.com/m1guelpf/laragit/releases/latest).
 ## Improvements:
 
-- [ ] Reduce page speed
-- [ ] Make tests (I don't know how *yet*)
-- [ ] Improve the UI (I'm horrible at bootstrap design)
-- [ ] Make the code cleaner
-- [ ] Provide an installer
+- [ ] Reduce page speed - v3.0
+- [ ] Make tests (I don't know how *yet*) - v2.0
+- [ ] Improve the UI (I'm horrible at bootstrap design) - v2.0
+- [ ] Make the code cleaner- v3.0
+- [ ] Provide an installer - v3.0
+- [ ] Mark all as read - v2.0
 
 Any other thing **you** think that can be improved.
 
