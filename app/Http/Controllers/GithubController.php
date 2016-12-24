@@ -88,7 +88,6 @@ class GithubController extends Controller
 
     public static function markAllRead()
     {
-        Github::authenticate(Auth::user()->token, null, 'http_token');
-        Github::api('notification')->markRead();
+        return redirect('wip');
     }
 }
