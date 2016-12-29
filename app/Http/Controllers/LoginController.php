@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Redirect;
 use SocialAuth;
 use SocialNorm\Exceptions\ApplicationRejectedException;
 use SocialNorm\Exceptions\InvalidAuthorizationCodeException;
+use Snowfire\Beautymail\Beautymail;
 
 class LoginController extends Controller
 {
