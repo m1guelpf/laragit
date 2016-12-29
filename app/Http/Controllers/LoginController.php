@@ -65,3 +65,4 @@ public function sendWelcome($user)
             });
         }
     }
+}
