@@ -29,6 +29,9 @@ class LoginController extends Controller
                 $user->name = $details->full_name;
                 $user->token = $details->access_token;
                 $user->save();
+                if (! $user->exists) {
+        // Send welcome email
+    }
             });
         } catch (ApplicationRejectedException $e) {
             return redirect('login');
