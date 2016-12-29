@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Auth;
-use Snowfire\Beautymail\Beautymail;
 
 class MailController extends Controller
 {
