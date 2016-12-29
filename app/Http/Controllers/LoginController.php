@@ -52,3 +52,17 @@ class LoginController extends Controller
         return redirect('');
     }
 }
+
+public function sendWelcome()
+    {
+        if (Auth::user()['recieveMails']) {
+            $beautymail = app()->make(Beautymail::class);
+            $beautymail->send('emails.welcome', ['user' => Auth::user()], function ($message) {
+                $user = Auth::user();
+                $message
+            ->from('laragit@miguelpiedrafita.com')
+            ->to($user->email, $user->name)
+            ->subject('Welcome!');
+            });
+        }
+    }
