@@ -31,7 +31,7 @@ class LoginController extends Controller
                 $user->token = $details->access_token;
                 $user->save();
                 if (! $user->exists) {
-        // Send welcome email
+        $this->sendWelcome();
     }
             });
         } catch (ApplicationRejectedException $e) {
@@ -54,13 +54,12 @@ class LoginController extends Controller
     }
 }
 
-public function sendWelcome()
+public function sendWelcome($user)
     {
         if (Auth::user()['recieveMails']) {
             $beautymail = app()->make(Beautymail::class);
-            $beautymail->send('emails.welcome', ['user' => Auth::user()], function ($message) {
-                $user = Auth::user();
-                $message
+            $beautymail->send('emails.welcome', ['user' => $user], function ($message) {
+            $message
             ->from('laragit@miguelpiedrafita.com')
             ->to($user->email, $user->name)
             ->subject('Welcome!');
