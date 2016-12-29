@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Snowfire\Beautymail\Beautymail;
 use SocialAuth;
 use SocialNorm\Exceptions\ApplicationRejectedException;
 use SocialNorm\Exceptions\InvalidAuthorizationCodeException;
@@ -29,6 +30,9 @@ class LoginController extends Controller
                 $user->name = $details->full_name;
                 $user->token = $details->access_token;
                 $user->save();
+                if (!$user->exists) {
+                    $this->sendWelcome();
+                }
             });
         } catch (ApplicationRejectedException $e) {
             return redirect('login');
@@ -47,5 +51,18 @@ class LoginController extends Controller
         Auth::logout();
 
         return redirect('');
+    }
+
+    public function sendWelcome($user)
+    {
+        if (Auth::user()['recieveMails']) {
+            $beautymail = app()->make(Beautymail::class);
+            $beautymail->send('emails.welcome', ['user' => $user], function ($message) {
+                $message
+            ->from('laragit@miguelpiedrafita.com')
+            ->to($user->email, $user->name)
+            ->subject('Welcome!');
+            });
+        }
     }
 }
