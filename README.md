@@ -41,7 +41,7 @@ Remember that you can always download the latest version using [this link](https
 
 You can check the [```v2.0``` milestone](https://github.com/m1guelpf/laragit/milestone/1) to get info about the status of the ```v2.0``` development.
 
-Any other thing **you** think that can be improved.
+Found an issue? Something to improve? [Open an issue](https://github.com/m1guelpf/laragit/issues/new)!
 
 ## Credits:
 
