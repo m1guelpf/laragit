@@ -9,7 +9,7 @@ return [
       'github' => [
           'client_id'     => env('GITHUB_ID'),
           'client_secret' => env('GITHUB_SECRET'),
-          'redirect_uri'  => 'http://github.local.dev/callback',
+          'redirect_uri'  => 'http://laragit.local.dev/callback',
           'scope'         => ['notifications'],
       ],
     ],

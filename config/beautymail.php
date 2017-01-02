@@ -24,7 +24,7 @@ return [
         'address'     => null,
 
         'logo'        => [
-            'path'   => 'http://github.local.dev/img/logo.png',
+            'path'   => 'http://laragit.local.dev/img/logo.png',
             'width'  => '50',
             'height' => '50',
         ],
