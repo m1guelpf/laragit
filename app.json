@@ -5,7 +5,7 @@
 	"logo": "http://i.imgur.com/xcs1BDg.png",
 	"keywords": ["github", "notifications", "laravel"],
   "scripts": {
-    "postdeploy": "touch database/database.sqlite && php artisan migrate"
+    "postdeploy": "php artisan migrate"
   },
 	"env": {
 		"APP_KEY": {
