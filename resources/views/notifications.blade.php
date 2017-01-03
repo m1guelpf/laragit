@@ -18,16 +18,16 @@ function markAllRead(){
                     <tr>
                       <td>
                     <div id="{{ $notification['id'] }}" class="notification">
-                    @if (($notification['subject'])['type'] == "Issue")
+                    @if ($notification['type'] == "Issue")
                     <span class="octicon octicon-issue-opened"></span>
-                    @elseif (($notification['subject'])['type'] == "PullRequest")
+                    @elseif ($notification['type'] == "PullRequest")
                     <span class="octicon octicon-git-pull-request"></span>
-                    @elseif (($notification['subject'])['type'] == "Commit")
+                    @elseif ($notification['type'] == "Commit")
                     <span class="octicon octicon-git-commit"></span>
-                    @elseif (($notification['subject'])['type'] == "Release")
+                    @elseif ($notification['type'] == "Release")
                     <span class="octicon octicon-tag"></span>
                     @endif
-                    <a href="{{ url('notification/')."/".$notification['id'] }}" target="_blank" onclick="hidenotif({{ $notification['id'] }})">{{ ($notification['subject'])['title'] }}</a>
+                    <a href="{{ url('notification/')."/".$notification['id'] }}" target="_blank" onclick="hidenotif({{ $notification['id'] }})">{{ $notification['title'] }}</a>
                   </td><td><span class="octicon octicon-check"></span></td>
                     </div>
                   </tr>
