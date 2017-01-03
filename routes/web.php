@@ -1,7 +1,8 @@
 <?php
 
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 use App\Notification;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
