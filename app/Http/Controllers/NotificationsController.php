@@ -15,6 +15,10 @@ class NotificationsController extends Controller
 
     public function showNotifications(){
       $notifications = Notification::where('userid', Auth::user()->id)->get();
+      if (!$notifications){
       return view('notifications')->with('notifications', $notifications);
+    } else {
+      return view('empty');
+    }
     }
 }
