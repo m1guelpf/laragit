@@ -4,4 +4,17 @@
   "repository": "https://github.com/m1guelpf/laragit",
   "logo": "http://i.imgur.com/xcs1BDg.png",
   "keywords": ["github", "notifications", "laravel"]
-}
+},
+"env": {
+    "APP_KEY": {
+      "description": "A secret key for Laravel internal use.You can get it at http://randomkeygen.com/ in the codeigniter section",
+      "value": "4LUXFnDJ95lPkaBPWyJ1YAdW1ES7zTdJ",
+      "required": true
+    }
+  },
+  "addons": [
+      "cleardb",
+      {
+        "plan": "cleardb:ignite",
+        "as": "MySQL"
+      },
