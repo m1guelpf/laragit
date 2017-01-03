@@ -1,0 +1,7 @@
+{
+  "name": "Laragit",
+  "description": "A Laravel interface for managing Github notifications.",
+  "repository": "https://github.com/m1guelpf/laragit",
+  "logo": "http://i.imgur.com/xcs1BDg.png",
+  "keywords": ["github", "notifications", "laravel"]
+}
