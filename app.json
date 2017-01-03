@@ -18,3 +18,4 @@
         "plan": "cleardb:ignite",
         "as": "MySQL"
       },
+]
