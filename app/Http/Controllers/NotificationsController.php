@@ -12,13 +12,13 @@ class NotificationsController extends Controller
         $this->middleware('auth');
     }
 
-    public function showNotifications(){
-      $notifications = Notification::where('userid', Auth::user()->id)->get();
-      if (!$notifications){
-      return view('notifications')->with('notifications', $notifications);
-    } else {
-      return view('empty');
-    }
-
+    public function showNotifications()
+    {
+        $notifications = Notification::where('userid', Auth::user()->id)->get();
+        if (!$notifications) {
+            return view('notifications')->with('notifications', $notifications);
+        } else {
+            return view('empty');
+        }
     }
 }
