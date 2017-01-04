@@ -30,7 +30,6 @@ class NotificationsController extends Controller
             $notification = Notification::findOrFail($id);
             $notification->unread = false;
             $notification->save();
-            event(new UpdateNotification($notification));
         }
     }
 }
