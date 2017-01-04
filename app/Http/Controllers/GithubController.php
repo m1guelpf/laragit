@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Notification;
 use Auth;
 use GrahamCampbell\GitHub\Facades\GitHub;
 
@@ -16,11 +17,23 @@ class GithubController extends Controller
     {
         Github::authenticate(Auth::user()->token, null, 'http_token');
         $notifications = GitHub::api('notification')->all();
-        if ($notifications != null) {
-            return view('notifications')->with('notifications', $notifications);
+        foreach ($notifications as $rawnotif) {
+            $subject = $rawnotif['subject'];
+            $repo = $rawnotif['repository'];
+            $notification = new Notification();
+            $notification->id = $rawnotif['id'];
+            $notification->unread = $rawnotif['unread'];
+            $notification->reason = $rawnotif['reason'];
+            $notification->title = $subject['title'];
+            $notification->url = $subject['url'];
+            $notification->type = $subject['type'];
+            $notification->private = $repo['private'];
+            $notification->repoid = $repo['id'];
+            $notification->userid = Auth::user()->id;
+            $notification->save();
         }
 
-        return view('no-notifications');
+        return redirect('notifications');
     }
 
     public function getNotification($id)

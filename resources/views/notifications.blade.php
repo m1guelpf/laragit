@@ -1,15 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<script type="text/javascript" language="javascript">
-function markAllRead(){
-}
-</script>
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Notifications<span style="float:right" onclick="window.location='{{ url('notifications/read') }}'" class="octicon octicon-check"></span></div>
+                <div class="panel-heading">Notifications<span style="float:right" onclick="window.location='{{ url('sync') }}'" class="octicon octicon-sync"></span></div>
 
                 <div class="panel-body">
                   <table>
@@ -18,16 +14,16 @@ function markAllRead(){
                     <tr>
                       <td>
                     <div id="{{ $notification['id'] }}" class="notification">
-                    @if (($notification['subject'])['type'] == "Issue")
+                    @if ($notification['type'] == "Issue")
                     <span class="octicon octicon-issue-opened"></span>
-                    @elseif (($notification['subject'])['type'] == "PullRequest")
+                    @elseif ($notification['type'] == "PullRequest")
                     <span class="octicon octicon-git-pull-request"></span>
-                    @elseif (($notification['subject'])['type'] == "Commit")
+                    @elseif ($notification['type'] == "Commit")
                     <span class="octicon octicon-git-commit"></span>
-                    @elseif (($notification['subject'])['type'] == "Release")
+                    @elseif ($notification['type'] == "Release")
                     <span class="octicon octicon-tag"></span>
                     @endif
-                    <a href="{{ url('notification/')."/".$notification['id'] }}" target="_blank" onclick="hidenotif({{ $notification['id'] }})">{{ ($notification['subject'])['title'] }}</a>
+                    <a href="{{ url('notification/')."/".$notification['id'] }}" target="_blank" onclick="hidenotif({{ $notification['id'] }})">{{ $notification['title'] }}</a>
                   </td><td><span class="octicon octicon-check"></span></td>
                     </div>
                   </tr>

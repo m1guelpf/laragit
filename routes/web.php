@@ -1,5 +1,6 @@
 <?php
 
+use App\Notification;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
@@ -30,6 +31,8 @@ Route::get('mail/unsubscribed', 'MailController@showUnsubscribed');
 Route::get('wip', function () {
     echo 'This part of the site is not working yet, check back soon!';
 });
-Route::get('notifications', 'GithubController@getNotifications');
+// Notifications
+Route::get('notifications', 'NotificationsController@showNotifications');
 Route::get('notification/{id}', 'GithubController@getNotification');
+Route::get('sync', 'GithubController@getNotifications');
 Route::get('notifications/read', 'GithubController@markAllRead');
