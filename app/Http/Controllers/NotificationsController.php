@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Events\UpdateNotification;
 use App\Notification;
 use App\Repo;
 use Auth;
