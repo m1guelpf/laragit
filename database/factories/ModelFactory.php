@@ -13,11 +13,11 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(App\User::class, function (Faker\Generator $faker) {
-    static $password;
-
     return [
+        'id'             => $faker->unique()->randomNumber($nbDigits = 3),
         'name'           => $faker->name,
         'email'          => $faker->unique()->safeEmail,
+        'token'          => str_random(15),
         'remember_token' => str_random(10),
     ];
 });
