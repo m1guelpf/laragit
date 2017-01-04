@@ -34,7 +34,7 @@ LaraGit was created as a personal project for learning Laravel, PHP and the Gith
 
 ## Status:
 
-Actual version: [```v1.1```](https://github.com/m1guelpf/laragit/releases/v1.1)
+Actual version: [```v1.2```](https://github.com/m1guelpf/laragit/releases/v1.2)
 Remember that you can always download the latest version using [this link](https://github.com/m1guelpf/laragit/releases/latest).
 
 ## TO DO:
