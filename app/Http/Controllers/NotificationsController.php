@@ -17,7 +17,7 @@ class NotificationsController extends Controller
     {
         $notifications = Notification::where('userid', Auth::user()->id)->get();
         $repos = Repo::where('userid', Auth::user()->id)->get();
-        if (count($notifications) == 0 && count($repos) == 0) {
+        if (count($notifications) == 0 || count($repos) == 0) {
             return view('empty');
         } else {
             return view('notifications', ['repos' => $repos, 'notifications' => $notifications]);
