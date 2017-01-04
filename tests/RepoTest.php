@@ -1,8 +1,5 @@
 <?php
 
-use Illuminate\Foundation\Testing\WithoutMiddleware;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class NotificationTest extends TestCase
 {
@@ -24,5 +21,5 @@ class NotificationTest extends TestCase
              ->dontSee('Exception')
              ->click($notification->title)
              ->seePageIs('/notification//'.$notification->id);
-      }
     }
+}

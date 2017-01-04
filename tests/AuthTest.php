@@ -1,8 +1,5 @@
 <?php
 
-use Illuminate\Foundation\Testing\WithoutMiddleware;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class AuthTest extends TestCase
 {
@@ -13,9 +10,9 @@ class AuthTest extends TestCase
      */
     public function testExample()
     {
-      $user = factory(App\User::class)->create();
+        $user = factory(App\User::class)->create();
 
-      $this->actingAs($user)
+        $this->actingAs($user)
            ->visit('dashboard')
            ->seePageIs('/notifications')
            ->dontSee('Error')

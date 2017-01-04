@@ -1,19 +1,16 @@
 <?php
 
-use Illuminate\Foundation\Testing\WithoutMiddleware;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class UITest extends TestCase
 {
     /**
-     * Test the UI
+     * Test the UI.
      *
      * @return void
      */
     public function testUI()
     {
-      $this->visit('/')
+        $this->visit('/')
            ->see('LaraGit')
            ->see('Github')
            ->see('Using')
