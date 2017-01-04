@@ -3,8 +3,6 @@
 namespace App\Listeners;
 
 use App\Events\UpdateNotification;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Contracts\Queue\ShouldQueue;
 
 class NotificationsUpdated
 {
@@ -21,7 +19,8 @@ class NotificationsUpdated
     /**
      * Handle the event.
      *
-     * @param  UpdateNotification  $event
+     * @param UpdateNotification $event
+     *
      * @return void
      */
     public function handle(UpdateNotification $event)

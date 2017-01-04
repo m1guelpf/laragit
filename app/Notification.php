@@ -10,6 +10,7 @@ class Notification extends Model
     protected $fillable = [
         'unread', 'reason', 'title', 'url', 'private', 'type',
     ];
+
     public function user()
     {
         return $this->belongsTo('App\User', 'userid');

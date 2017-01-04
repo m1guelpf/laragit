@@ -20,6 +20,7 @@ class GithubController extends Controller
         $notifications = GitHub::api('notification')->all();
         $this->storeNotifications($notifications);
         $this->storeRepos($notifications);
+
         return redirect('notifications');
     }
 
@@ -88,42 +89,43 @@ class GithubController extends Controller
 
     public function storeNotifications($notifications)
     {
-      foreach ($notifications as $rawnotif) {
-      if (!Notification::where('id', '=', $rawnotif['id'])->exists()){
-          $subject = $rawnotif['subject'];
-          $repo = $rawnotif['repository'];
-          $notification = new Notification();
-          $notification->id = $rawnotif['id'];
-          $notification->unread = $rawnotif['unread'];
-          $notification->reason = $rawnotif['reason'];
-          $notification->title = $subject['title'];
-          $notification->url = $subject['url'];
-          $notification->type = $subject['type'];
-          $notification->private = $repo['private'];
-          $notification->repoid = $repo['id'];
-          $notification->userid = Auth::user()->id;
-          $notification->save();
-      }
-    }
+        foreach ($notifications as $rawnotif) {
+            if (!Notification::where('id', '=', $rawnotif['id'])->exists()) {
+                $subject = $rawnotif['subject'];
+                $repo = $rawnotif['repository'];
+                $notification = new Notification();
+                $notification->id = $rawnotif['id'];
+                $notification->unread = $rawnotif['unread'];
+                $notification->reason = $rawnotif['reason'];
+                $notification->title = $subject['title'];
+                $notification->url = $subject['url'];
+                $notification->type = $subject['type'];
+                $notification->private = $repo['private'];
+                $notification->repoid = $repo['id'];
+                $notification->userid = Auth::user()->id;
+                $notification->save();
+            }
+        }
     }
 
-    public function storeRepos($notifications){
-      foreach ($notifications as $notification) {
-      $repo = $notification['repository'];
-      if (!Repo::where('id', '=', $repo['id'])->exists()){
-      $user = $repo['owner'];
-      if (Repo::find($repo['id']) == null){
-        $repository = new Repo();
-        $repository->id = $repo['id'];
-        $repository->name = $repo['name'];
-        $repository->full_name = $repo['full_name'];
-        $repository->owner = $user['login'];
-        $repository->html_url = $repo['html_url'];
-        $repository->description = $repo['description'];
-        $repository->userid = Auth::user()->id;
-        $repository->save();
-      }
+    public function storeRepos($notifications)
+    {
+        foreach ($notifications as $notification) {
+            $repo = $notification['repository'];
+            if (!Repo::where('id', '=', $repo['id'])->exists()) {
+                $user = $repo['owner'];
+                if (Repo::find($repo['id']) == null) {
+                    $repository = new Repo();
+                    $repository->id = $repo['id'];
+                    $repository->name = $repo['name'];
+                    $repository->full_name = $repo['full_name'];
+                    $repository->owner = $user['login'];
+                    $repository->html_url = $repo['html_url'];
+                    $repository->description = $repo['description'];
+                    $repository->userid = Auth::user()->id;
+                    $repository->save();
+                }
+            }
+        }
     }
-  }
-}
 }

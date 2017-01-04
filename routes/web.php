@@ -1,6 +1,5 @@
 <?php
 
-use App\Repo;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
