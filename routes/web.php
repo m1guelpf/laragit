@@ -1,6 +1,6 @@
 <?php
 
-use App\Notification;
+use App\Repo;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
@@ -35,4 +35,4 @@ Route::get('wip', function () {
 Route::get('notifications', 'NotificationsController@showNotifications');
 Route::get('notification/{id}', 'GithubController@getNotification');
 Route::get('sync', 'GithubController@getNotifications');
-Route::get('notifications/read', 'GithubController@markAllRead');
+Route::get('read/{id}', 'NotificationsController@readNotification');

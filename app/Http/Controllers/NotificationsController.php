@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Notification;
+use App\Repo;
+use App\Events\UpdateNotification;
 use Auth;
 
 class NotificationsController extends Controller
@@ -15,10 +17,21 @@ class NotificationsController extends Controller
     public function showNotifications()
     {
         $notifications = Notification::where('userid', Auth::user()->id)->get();
-        if (!$notifications) {
-            return view('notifications')->with('notifications', $notifications);
+        $repos = Repo::where('userid', Auth::user()->id)->get();
+        if (count($notifications) == 0 || count($repos) == 0) {
+          return view('empty');
         } else {
-            return view('empty');
+            return view('notifications', ['repos' => $repos, 'notifications' => $notifications]);
         }
+    }
+
+    public function readNotification($id)
+    {
+      if (Notification::where('id', '=', $id)->exists() && Notification::find($id)->unread == true){
+        $notification = Notification::findOrFail($id);
+        $notification->unread = false;
+        $notification->save();
+        event(new UpdateNotification($notification));
+      }
     }
 }
