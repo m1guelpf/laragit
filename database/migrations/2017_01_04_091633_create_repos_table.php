@@ -19,7 +19,7 @@ class CreateReposTable extends Migration
             $table->string('full_name');
             $table->string('owner');
             $table->string('html_url');
-            $table->string('description')->nullable();
+            $table->longText('description')->nullable();
             $table->integer('userid');
         });
     }
