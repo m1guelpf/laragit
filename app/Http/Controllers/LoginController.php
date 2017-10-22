@@ -40,8 +40,8 @@ class LoginController extends Controller
             return redirect('login');
         }
 
-    // Current user is now available via Auth facade
-    $user = Auth::user();
+        // Current user is now available via Auth facade
+        $user = Auth::user();
 
         return Redirect::intended();
     }
