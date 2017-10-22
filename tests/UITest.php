@@ -16,14 +16,14 @@ class UITest extends TestCase
            ->see('Using')
            ->dontSee('Error')
            ->dontSee('Exception');
-      // Login checks
-      $this->visit('/')
+        // Login checks
+        $this->visit('/')
           ->click('Login')
           ->seePageIs('/login')
           ->dontSee('Error')
           ->dontSee('Exception');
-      // Auth checks
-      $this->visit('dashboard')
+        // Auth checks
+        $this->visit('dashboard')
            ->seePageIs('/login')
            ->dontSee('Error')
            ->dontSee('Exception');
