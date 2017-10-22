@@ -1,9 +1,11 @@
 # LaraGit
 A Laravel interface for managing Github notifications.
 
+**NOTE: This project is no longer mantained**
+
 ## Introduction:
 
-LaraGit was created as a personal project for learning Laravel, PHP and the Github API. This means that, when I started it, I didn't know anything about Laravel. They're probably lot's of things to improve, and I'm still learning. If you find one, please [open an issue](https://github.com/m1guelpf/github/issues/new) or [make a pull request](https://github.com/m1guelpf/github/pulls/compare).
+LaraGit was created as a personal project for learning Laravel, PHP and the Github API. This means that, when I started it, I didn't know anything about Laravel. They're probably lot's of things to improve, and I'm still learning.
 
 ## Features:
 
